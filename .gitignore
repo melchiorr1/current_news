@@ -3,6 +3,7 @@
 .flaskenv
 *.pyc
 *.pyo
+.env.py
 env/
 venv/
 .venv/
