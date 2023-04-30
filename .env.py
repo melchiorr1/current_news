@@ -1,0 +1,6 @@
+DEBUG=True
+FLASK_ENV="development"
+FLASK_APP="app"
+
+#NYT API KEY
+NYT_API_KEY='YcyxfQPaG2VyqL9MZUz8GBUAGMBtmfIo'

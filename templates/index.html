@@ -2,14 +2,14 @@
 <title>HTML 5 Boilerplate</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
-    <h1>Current News</h1>
-    <p>provided by New York Times API</p>
+    <h1 id="title">Current News</h1>
+    <p id="description" >provided by New York Times API</p>
 </nav>
 <section class="content">
     {% for title in articles.keys() %}
     <div class="article">
         <h2>{{title}}</h2>
-        <img src={{articles[title]}}></img>
+        <img class="article_img" src={{articles[title]}}></img>
     </div>
     {% endfor %}
 </section>
