@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import requests
 import os
 
 def get_articles():
-    api_key = os.environ.get("NYT_API_KEY")
+    api_key = app.config['NYT_API_KEY']
     dic = {}
 
     response = requests.get(f'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key={api_key}')
@@ -13,9 +13,9 @@ def get_articles():
     return dic
 
 app = Flask(__name__)
+app.config.from_pyfile('.env.py')
 
 @app.route('/')
 def index():
-    return get_articles()
-
+    return render_template("index.html", articles=get_articles())
 
