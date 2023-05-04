@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<title>Current News</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+    <h1 id="title">Current News</h1>
+    <p id="description" >provided by New York Times API</p>
+    <a href="{{url_for('index')}}">Home</a>
+
+    {% if g.user %}
+    <a href="{{url_for('readlater')}}">Read Later</a>
+    {% else %}
+    <a href="{{url_for('login')}}">Login</a>
+    <a href="{{url_for('register')}}">Register</a>
+    {% endif %}
+</nav>
+<section class="content">
+    {% block content %}{% endblock %}
+</section>

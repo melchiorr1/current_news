@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for title in articles.keys() %}
+    <div class="article">
+        <h2><a href={{articles[title][0]}}>{{title}}</a></h2>
+        <p>{{articles[title][2]}}</p>
+        <img class="article_img" src={{articles[title][1]}}></img>
+        {% if g.user %}
+        <button type="button">Add to read later</button>
+        {% else %}
+        <p>Log in to add articles to read later</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}
