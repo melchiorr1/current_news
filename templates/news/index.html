@@ -7,9 +7,7 @@
         <p>{{articles[title][2]}}</p>
         <img class="article_img" src={{articles[title][1]}}></img>
         {% if g.user %}
-        <button type="button">Add to read later</button>
-        {% else %}
-        <p>Log in to add articles to read later</p>
+        <button class="btn btn-primary" type="button">Add to read later</button>
         {% endif %}
     </div>
     {% endfor %}
