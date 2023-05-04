@@ -1,27 +1,30 @@
-a{
+a {
     color: black;
 }
 
-nav{
+nav {
     text-align: center;
 }
 
-#title{
+#title {
     font-size: 48px;
 }
 
-#description{
+#description {
     font-size: 16px;
 }
 
-.content{
+.content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: 25px;
+
+    text-align: center;
 }
 
-.article{
+.article {
     width: 640px;
     height: 420px;
 
@@ -30,18 +33,16 @@ nav{
     align-items: center;
     justify-content: center;
 
-    background-color:aliceblue;
-    border-style:solid;
+    background-color: aliceblue;
+    border-style: solid;
     border-width: 3px;
 
     margin: 5px;
     padding: 20px;
-
-    text-align: center;
 }
 
-.article_img{
-    width: 440px;
-    height: 293px;
+.article_img {
+    width: 400px;
+    height: 253px;
     border: solid 3px;
 }
