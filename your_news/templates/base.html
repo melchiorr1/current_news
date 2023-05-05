@@ -25,17 +25,18 @@
 {% endfor %}
 {% endif %}
 {% endwith %}
-<nav>
+<nav class="mt-5">
     <h1 id="title">Current News</h1>
     <p id="description">provided by New York Times API</p>
-    {% if g.user %}
-    <p>Hello {{g.user['username']}}</p>
+    {% if user.is_authenticated %}
+    <p>Hello {{user.username}}</p>
     {% else %}
     <p>Log in to add articles to read later</p>
     {% endif %}
     <a class="btn btn-primary" href="{{url_for('views.index')}}">Home</a>
-    {% if g.user %}
+    {% if user.is_authenticated %}
     <a class="btn btn-primary" href="{{url_for('views.readlater')}}">Read Later</a>
+    <a class="btn btn-primary" href="{{url_for('auth.logout')}}">Logout</a>
     {% else %}
     <a class="btn btn-primary" href="{{url_for('auth.login')}}">Login</a>
     <a class="btn btn-primary" href="{{url_for('auth.register')}}">Register</a>

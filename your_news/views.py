@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, current_app as app
 import requests
+from flask_login import login_required, current_user
+
 
 bp = Blueprint('views', __name__)
 
@@ -17,8 +19,9 @@ def get_articles(num=4):
 
 @bp.route('/')
 def index():
-    return render_template("/news/index.html", articles=get_articles(16))
+    return render_template("/news/index.html", articles=get_articles(16), user=current_user)
 
 @bp.route('/readlater')
+@login_required
 def readlater():
-    return render_template('/news/readlater.html')
+    return render_template('/news/readlater.html', user=current_user)
