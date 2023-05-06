@@ -1,1 +1,14 @@
 {% extends 'base.html' %}
+
+{% block content %}
+    {% for article in user.articles %}
+    <div class="article">
+        <h2><a href={{ article.url }}>{{article.title}}</a></h2>
+        <p>{{ article.authors }}</p>
+        <img class="article_img" src={{ article.media }}></img>
+        {% if user.is_authenticated %}
+        <button class="btn btn-primary mt-2" type="button" onclick="remove({{article.id}})">Remove</button>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}
